@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1600346064 source:c:\base\progs\battleships\battleships\matrix.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<cmath>
+	<io.h>
+	"Matrix.h"
+
+1600346065 c:\base\progs\battleships\battleships\matrix.h
+	<iostream>
+
+1600664541 source:c:\base\progs\battleships\battleships\main.cpp
+	<iostream>
+	<ctime>
+	<random>
+	<windows.h>
+	<string>
+	<queue>
+	"Game.h"
+	"Field.h"
+
+1600664528 c:\base\progs\battleships\battleships\game.h
+	"Field.h"
+	"Shooting.h"
+
+1600666786 c:\base\progs\battleships\battleships\field.h
+	<iostream>
+	"matrix.h"
+
+1600658861 c:\base\progs\battleships\battleships\shooting.h
+	<iostream>
+	"matrix.h"
+
