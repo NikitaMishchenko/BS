@@ -98,8 +98,7 @@ public:
             {std::cout << "coordinates in range\t";
                 if( (F.ship_places.get_data(x_coordinate, y_coordinate) == 0 &&
                    F.ship_places.get_data(x_coordinate+ship_size-1, y_coordinate) == 0)
-                   ||(F.ship_places.get_data(x_coordinate, y_coordinate) == 5 &&
-                   F.ship_places.get_data(x_coordinate+ship_size-1, y_coordinate) == 5)                   )
+                  )///||(F.ship_places.get_data(x_coordinate, y_coordinate) == 5 && F.ship_places.get_data(x_coordinate+ship_size-1, y_coordinate) == 5)
                 {std::cout << "can be placed\n";
                     return true;
                 }else{std::cout << "can not be placed coordinate has value\n";
@@ -219,6 +218,7 @@ public:
             this->info_err_placing();
             return false;
         }
+        return true;
     }
 
     void Placing_Cycle_Player()
@@ -255,10 +255,37 @@ public:
     }
 
 
-    void Placing_Cycle_AI()
+    /*void Placing_Cycle_AI()
     {
-        std::cout << "DAROVA NETU ESHE\n";
-    }
+        int is_vertical, x,y;
+        bool repeat_placing_occur = false;
+        for(int deck_number = 4; deck_number > 0; --deck_number)
+            for(int i = 0; i < 5-deck_number;)
+            {
+                system("cls");
+                this->show();
+                std::cout << "*****************************************************\n\n";
+                    if(repeat_placing_occur)
+                        std::cout << "Placing err. Repeat!\n";
+
+                    is_vertical = rand
+
+                    if (is_vertical)
+                        std::cout << "\tVertical placing.";
+                    else
+                        std::cout << "\tHorizontal placing.";
+                    std::cout << "Enter X and Y coordinate \n";
+                    std::cin >> x >> y;
+
+                if(Place_Linnear_Ship(*this, deck_number, is_vertical, x,y))
+                    i++;
+                else
+                {
+                    repeat_placing_occur = true;
+                    std::cin >> x;
+                }
+            }
+    }*/
 
     void info_err_placing()
     {

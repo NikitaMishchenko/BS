@@ -3,6 +3,7 @@
 
 #include "Field.h"
 #include "Shooting.h"
+#include "AI.h"
 
 
 class Game
@@ -26,6 +27,9 @@ protected:
         GAME_TURN_PLAYER,
         GAME_OVER
     };
+
+    ///******
+    ///переставить в field
     enum ShipsForm
     {
         ShipsLinnear,
@@ -36,6 +40,7 @@ protected:
         SpacingBox,
         SpacingOff
     };
+    ///********
 
 public:
     field F1;
@@ -53,13 +58,9 @@ public:
 
     void Run()
     {
-        //GameStage::MENU;
         GStage = MENU;
         int i_buff = 0;
-        //if(GStage == MENU)
-          //  std::cout << "MENU";//std::cout << (GameStage::GAME_OVER == GAME_OVER) << GameStage::MENU << std::endl;
-        //else
-       //     std::cout << "OTHER\n";
+
         std::cout << "Enter Game Mode 1 - Single Player, 2 - Coop: ";
             std::cin >> i_buff;
             if(i_buff == 1)
@@ -67,7 +68,7 @@ public:
             if(i_buff == 2)
                 GMode = Coop;
             else
-                GameMode::SinglePlayer;
+                GMode = GameMode::SinglePlayer;
 
         std::cout << "Enter Ship Form 1 - Linnear, 2 - Any: ";
             std::cin >> i_buff;
@@ -94,8 +95,9 @@ public:
             GStage = SHIP_PLACING_PLAYER2;
             this->F2.Placing_Cycle_Player();
         }else{std::cout << "SINGLE!\n";
+            Game_BS_AI ai;//(Game_BS_AI::AI_Placing_Mode::random);
             GStage = SHIP_PLACING_AI;
-            this->F2.Placing_Cycle_AI();
+            ai.AI_placing(this->F2);
         }
 
         this->GameLoop();
@@ -105,7 +107,7 @@ public:
 
     void GameLoop()
     {
-        GameStage::GAME_TURN_PLAYER;
+        GStage = GameStage::GAME_TURN_PLAYER;
         srand(time(0));rand();
 
         bool flag_game_over = false, flag_repeat = false;
@@ -137,6 +139,22 @@ public:
                 system("cls");
             }while(flag_repeat);
         }
+    }
+
+    void info_game_stage()
+    {
+        std::cout << "info_game_stage\n";
+    }
+
+    void info_game_mode()
+    {
+        if(GMode == GameMode::Coop)
+            std::cout << "GameMode: Coop\n";
+        else
+            if(GMode == GameMode::SinglePlayer)
+                std::cout << "GameMode: SinglePlayer\n";
+            else
+                std::cout << "GameMode: indefined\n";
     }
 };
 

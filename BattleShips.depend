@@ -10,7 +10,7 @@
 1600346065 c:\base\progs\battleships\battleships\matrix.h
 	<iostream>
 
-1600664541 source:c:\base\progs\battleships\battleships\main.cpp
+1600688477 source:c:\base\progs\battleships\battleships\main.cpp
 	<iostream>
 	<ctime>
 	<random>
@@ -20,15 +20,22 @@
 	"Game.h"
 	"Field.h"
 
-1600664528 c:\base\progs\battleships\battleships\game.h
+1600689515 c:\base\progs\battleships\battleships\game.h
 	"Field.h"
 	"Shooting.h"
+	"AI.h"
 
-1600666786 c:\base\progs\battleships\battleships\field.h
+1600691557 c:\base\progs\battleships\battleships\field.h
 	<iostream>
 	"matrix.h"
 
 1600658861 c:\base\progs\battleships\battleships\shooting.h
 	<iostream>
 	"matrix.h"
+
+1600690930 c:\base\progs\battleships\battleships\ai.h
+	<iostream>
+	<ctime>
+	<random>
+	"Field.h"
 

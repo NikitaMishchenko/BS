@@ -94,15 +94,16 @@ void procedure_auto_place_ships(field &F)
 
 int main()
 {
-    //srand(time(0));rand();
+    srand(time(0));rand();
     //field P1;
 
     //P1.Placing_Cycle();
 
     Game NewGame;
     //NewGame.Run();
-    NewGame.F1.Placing_Cycle_Player();
-
+    ///NewGame.F1.Placing_Cycle_Player();
+    Game_BS_AI ai;
+    ai.AI_placing(NewGame.F2);
     //GameLoop();
 
     //P1.ship_places.Save_matrix("shipepta.txt");
